@@ -25,7 +25,8 @@ class taobao(object):
         # 第二步，检查账号密码,获取申请st码地址
         st_url = self.check_password()
         if st_url.strip() == '':
-            logger.error('检查账号密码是否正确')
+            logger.error('检查账号、密码和ua是否正确')
+            return
         logger.info('获取申请st码地址成功,地址为：'+ st_url)
 
         # 第三步，访问st码地址,获取cookie
